@@ -108,7 +108,7 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void sleepinessAfterTickIs1() {
+	public void sleepinessAfter1TickIs25() {
 		VirtualPet underTest = new VirtualPet(0, 0, 0, 0, 0);
 		underTest.tick();
 		int check = underTest.getSleepiness();

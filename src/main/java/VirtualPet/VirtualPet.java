@@ -7,6 +7,7 @@ public class VirtualPet {
 	private int boredom;
 	private int happiness;
 	private int sleepiness;
+	public int tick;
 
 	public VirtualPet(int hunger, int thirst, int boredom, int happiness, int sleepiness) {
 		this.hunger = hunger;
@@ -51,13 +52,15 @@ public class VirtualPet {
 	public int getHappiness() {
 		return happiness;
 	}
+	
 
 	public int getSleepiness() {
+		sleepiness += tick * 25;
 		return sleepiness;
 	}
 
 	public void tick() {
-		sleepiness += 25;
+		tick = tick + 1;
 	}
 
 }

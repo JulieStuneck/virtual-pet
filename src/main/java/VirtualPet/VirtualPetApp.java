@@ -8,16 +8,17 @@ public class VirtualPetApp {
 		Scanner input = new Scanner(System.in);
 
 		VirtualPet myVirtualPet = new VirtualPet(100, 100, 100, 100, 0);
-		int myVirtualPettick = 0;
 
 		System.out.println("Hi! I'm your new pet. What would you like to call me? ");
 		String petName = input.next();
 		System.out.println(petName + " is a great name! Thanks.");
 		System.out.println("");
 
-		do {
+		while (myVirtualPet.getHappiness() <= 200) {
 
-			myVirtualPettick += 1;
+			myVirtualPet.tick += 1;
+			System.out.println("tick is " + myVirtualPet.tick);// for testing tick - delete later
+			System.out.println("sleepiness is " + myVirtualPet.getSleepiness());//testing - delete
 
 			System.out.println("Here's how I'm feeling now:");
 			System.out.println("My hunger level is " + myVirtualPet.getHunger() + ", my thirst level is "
@@ -55,13 +56,12 @@ public class VirtualPetApp {
 				System.out.println("");
 				System.out.println("That's not one of the options. Try again.");
 			}
+			
+			System.out.println("Yay! My happiness is "+ myVirtualPet.getHappiness() + "! However, my sleepiness is now " + myVirtualPet.getSleepiness() + ".");
+			System.out.println("I'm so happy and sleepy I need a nap! You are the best pet owner ever :)!");
+			System.out.println("See you next time.");
 
-
-		} while (myVirtualPet.getHappiness() <= 200);
-
-		System.out.println("I'm so happy - I need a nap! You are the best pet owner ever :)!");
-		System.out.println("See you next time.");
-
+		}
 		input.close();
 	}
 }
