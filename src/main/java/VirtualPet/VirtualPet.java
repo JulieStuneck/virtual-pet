@@ -6,12 +6,14 @@ public class VirtualPet {
 	private int thirst;
 	private int boredom;
 	private int happiness;
+	private int sleepiness;
 
-	public VirtualPet(int hunger, int thirst, int boredom, int happiness) {
+	public VirtualPet(int hunger, int thirst, int boredom, int happiness, int sleepiness) {
 		this.hunger = hunger;
 		this.thirst = thirst;
 		this.boredom = boredom;
 		this.happiness = happiness;
+		this.sleepiness = sleepiness;
 	}
 
 	public int getHunger() {
@@ -20,14 +22,14 @@ public class VirtualPet {
 
 	public void feed() {
 		hunger -= 25;
-		boredom -= 25;
+		boredom -= 10;
 		happiness += 15;
 	}
 
 	public void activity() {
 		hunger += 50;
 		thirst += 25;
-		boredom -= 30;
+		boredom -= 10;
 		happiness += 15;
 	}
 
@@ -37,7 +39,7 @@ public class VirtualPet {
 
 	public void drink() {
 		thirst -= 25;
-		boredom -= 20;
+		boredom -= 10;
 		happiness += 15;
 
 	}
@@ -46,14 +48,16 @@ public class VirtualPet {
 		return boredom;
 	}
 
-	public void tick() {
-		hunger += 10;
-		thirst += 10;
-		boredom += 10;
-	}
-
 	public int getHappiness() {
 		return happiness;
+	}
+
+	public int getSleepiness() {
+		return sleepiness;
+	}
+
+	public void tick() {
+		sleepiness += 25;
 	}
 
 }
