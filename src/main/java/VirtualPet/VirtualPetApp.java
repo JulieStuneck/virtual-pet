@@ -17,12 +17,11 @@ public class VirtualPetApp {
 
 		System.out.println("Hi! I'm your new pet. What would you like to call me? ");
 		String petName = input.next();
-		System.out.println(petName + " is a great name! Thanks.");
-		System.out.println("");
+		String petNameCap = petName.substring(0, 1).toUpperCase() + petName.substring(1);
+		System.out.println(petNameCap + " is a great name! Thanks.");
 
 		do {
-			System.out.println("tick is " + myVirtualPet.tick);// for testing tick - delete later
-			System.out.println("sleepiness is " + myVirtualPet.getSleepiness());// testing - delete
+			System.out.println("");
 
 			System.out.println("Here's how I'm feeling now:");
 			System.out.println("My hunger level is " + myVirtualPet.getHunger() + ", my thirst level is "
@@ -41,7 +40,7 @@ public class VirtualPetApp {
 			if (doNext == 1) {
 				myVirtualPet.feed();
 				System.out.println("");
-				System.out.println("Yummy, yummy in " + petName + "'s tummy! Thank you!");
+				System.out.println("Yummy, yummy in " + petNameCap + "'s tummy! Thank you!");
 				System.out.println("");
 
 			}
@@ -59,12 +58,13 @@ public class VirtualPetApp {
 				System.out.println();
 			}
 
-			if (doNext >= 3) {
+			if (doNext > 3) {
 				System.out.println("");
 				System.out.println("That's not one of the options. Try again.");
 			}
 
 			myVirtualPet.tick += 1;
+			myVirtualPet.tick();
 
 		} while (myVirtualPet.getHappiness() <= 200);
 

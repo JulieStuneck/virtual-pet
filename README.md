@@ -9,24 +9,3 @@ When the pet plays:
 	hunger goes up by 50, thirst goes up by 25, boredom goes down by 10 and happiness goes up by 15.
 Each choice causes the pets sleepiness to increase by 25.
 
- /\ /\
-(-0-0-)
-  ><><
-(     )
-__(||) (||)
-
-
-private int hunger;
-	private int thirst;
-	private int boredom;
-	private int happiness;
-	private int sleepiness;
-	public int tick;
-
-	public VirtualPet(int hunger, int thirst, int boredom, int happiness, int sleepiness) {
-		this.hunger = hunger;
-		this.thirst = thirst;
-		this.boredom = boredom;
-		this.happiness = happiness;
-		this.sleepiness = sleepiness;
-	}
