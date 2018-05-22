@@ -55,12 +55,11 @@ public class VirtualPet {
 	
 
 	public int getSleepiness() {
-		sleepiness += tick * 25;
 		return sleepiness;
 	}
 
 	public void tick() {
-		tick = tick + 1;
+		sleepiness += 25;
 	}
 
 }
